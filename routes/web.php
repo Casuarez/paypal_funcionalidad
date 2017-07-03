@@ -21,6 +21,8 @@ Route::post('/subtotal','InShoppingCartsController@edit');
 Route::put('in_shopping_carts/{id}','InShoppingCartsController@update');
 Route::post('/AgregarCarrito','InShoppingCartsController@store');
 
+Route::get('/Reporte','ReporteController@home');
+
 Route::get('/payments/store','PaymentsController@store');
 
 Route::delete('in_shopping_carts/{id}','InShoppingCartsController@destroy');
@@ -29,6 +31,8 @@ Auth::routes();
 
 Route::resource('products','ProductsController');
 
+Route::resource('/users','UsersController');
+
 Route::resource('in_shopping_carts','InShoppingCartsController', ['only' => ['store','destroy']
 	]);
 
@@ -36,7 +40,7 @@ Route::resource('compras','ShoppingCartsController',['only'=>['show']]);
 
 Route::resource('orders','OrdersController',['only'=>['index','update']]);
 
-
+Route::get('/admin', 'AdminController@index');
 Route::get('/home', 'HomeController@index');
 
 Route::get('products/images/{filename}',function($filename){

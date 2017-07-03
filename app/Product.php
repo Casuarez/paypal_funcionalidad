@@ -11,7 +11,7 @@ class Product extends Model
     		->setDescription($this->description)
     		->setCurrency('USD')
     		->setQuantity(1)
-    		->setPrice($this->pricing/3.4);
+    		->setPrice($this->pricing);
 
     }
         public function inShoppingCarts()

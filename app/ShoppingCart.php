@@ -54,7 +54,7 @@ class ShoppingCart extends Model
 
 	public function totalUSD(){
 		
-		return $this->products()->sum("pricing")/3.4;
+		return $this->products()->sum("pricing");
 
 	}
 
